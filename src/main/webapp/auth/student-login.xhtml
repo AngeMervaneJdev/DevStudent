@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html 
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://xmlns.jcp.org/jsf/core" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsp/jstl/passthrough">
+      
+        <ui:include src="/shared/shared.xhtml">
+		   <ui:param name="PageTitle" value="Devs Development|Login"></ui:param>
+		</ui:include>
+      
+      
+      
+      
+     <f:view>
+	     <body> 
+       		  <!-- ======= Header ======= -->
+   
+			  <ui:include src="/shared/header.xhtml">
+			  	 <ui:param name="active" value="home"></ui:param>
+			  </ui:include>
+			  
+		  <!-- ======= Hero Section ======= -->
+			<main id="main">
+
+        	    <section class="h-100 h-custom" >
+					  <div class="container py-5 h-100">
+					    <div class="row d-flex justify-content-center align-items-center h-100">
+					      <div class="col-lg-8 col-xl-6">
+					        <div class="card rounded-3" style="background-color: #f3f5fa;">
+					        
+					          <div class="card-body p-4 p-md-5">
+					            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
+					
+					            <h:form id="theForm">
+	           
+								    Login: 
+								     <h:inputText id="login" required="true" value="#{loginBean.login}" p:required="true" class="form-control"
+								                 requiredMessage="La saisie du login est obligatoire !"
+								                validatorMessage="Un caractère # est requis" />
+								    <h:message for="login" styleClass="errorBlock" />
+								    <br/>
+								
+								    Password:
+								    <h:inputSecret id="password"  required="true" value="#{loginBean.password}" class="form-control"
+								                   requiredMessage="La saisie du mot de passe est obligatoire !"
+								                   validatorMessage="Votre mot de passe doit contenir entre 3 à 12 caractères">
+								    	<f:validateRegex pattern="^[a-zA-Z0-9]{3,12}$" />
+								    </h:inputSecret>
+								    <h:message for="password" styleClass="errorBlock" />
+								    <br/><br/>
+					                    
+					                <h:commandButton action="#{loginBean.loginStudent()}" value="Connect" class="text-center btn btn-secondary"/>
+					               
+					        	</h:form>
+					
+					          </div>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
+					</section>
+        	    
+        	    <ui:include src="/shared/footer.html"></ui:include>
+        	    
+		     </main>
+	     </body>
+     </f:view>
+</html>

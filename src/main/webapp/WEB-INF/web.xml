@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>hello</display-name>
+  
+   <context-param>
+  	<param-name>JDBC_DRIVER</param-name>
+  	<param-value>com.mysql.cj.jdbc.Driver</param-value>
+  </context-param>
+  
+  <env-entry>
+	  <env-entry-name>JDBC_DRIVER</env-entry-name>
+	   <env-entry-type>java.lang.String</env-entry-type>
+	  <env-entry-value>com.mysql.cj.jdbc.Driver</env-entry-value>
+  </env-entry>
+  
+  <session-config>
+  <session-timeout>20</session-timeout>
+  </session-config>
+  
+    <env-entry>
+	  <env-entry-name>JDBC_URL</env-entry-name>
+	  <env-entry-type>java.lang.String</env-entry-type>
+	  <env-entry-value>jdbc:mysql://localhost:3306/studentDev</env-entry-value>
+    </env-entry>
+    
+       <env-entry>
+		  <env-entry-name>JDBC_LOGIN</env-entry-name>
+		  <env-entry-type>java.lang.String</env-entry-type>
+		  <env-entry-value>ange</env-entry-value>
+	    </env-entry>
+    
+       <env-entry>
+		  <env-entry-name>JDBC_PASSWORD</env-entry-name>
+		  <env-entry-type>java.lang.String</env-entry-type>
+		  <env-entry-value>password</env-entry-value>
+    	</env-entry>
+  
+
+  
+  
+   <context-param>
+	  	<param-name>JDBC_LOGIN</param-name>
+	  	
+	  	<param-value>ange</param-value>
+  </context-param>
+  
+   <context-param>
+	  	<param-name>JDBC_PASSWORD</param-name>
+	  	<param-value>password</param-value>
+  </context-param>
+  
+   <error-page>
+      <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+      <location>/home/index.xhtml?faces-redirect=true</location>
+   </error-page>
+  
+  <welcome-file-list>
+  
+  
+  
+  
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

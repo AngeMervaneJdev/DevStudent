@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://xmlns.jcp.org/jsf/core" 
+ xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+     <ui:include src="/shared/shared.xhtml">
+		   <ui:param name="PageTitle" value="Devs Development|registration"></ui:param>
+	</ui:include>
+
+	 <f:view>
+		<body>
+		  <!-- ======= Header ======= -->
+	   
+				  <ui:include src="/shared/header.xhtml">
+				  	 <ui:param name="active" value="home"></ui:param>
+				  </ui:include>
+				  
+			  <!-- ======= Hero Section ======= -->
+			<main id="main" class="container m-3">
+			
+			      <section class="h-100 h-custom" >
+					  <div class="container py-5 h-100">
+					    <div class="row d-flex justify-content-center align-items-center h-100">
+					      <div class="col-lg-8 col-xl-6">
+					        <div class="card rounded-3" style="background-color: #f3f5fa;">
+					        
+					          <div class="card-body p-4 p-md-5">
+					            Student confirmed <b>#{connectedUser.firstName}</b> <b>#{connectedUser.lastName}</b>
+							     From #{connectedUser.country}<br></br>
+							     His favorite programming language is <b>#{connectedUser.language}</b>
+							    <br></br>
+							    His knows Languages are 
+							    
+							    <UL>
+							    
+							       <ui:repeat value="${connectedUser.knowsLanguages}" var="tempLanguage">
+							       		<li>#{tempLanguage}</li>
+							       </ui:repeat>
+							    </UL> 
+							    
+							    <a href="../article/new-article.xhtml" class="btn btn-primary" >Add articles</a>
+						        <a href="../article/liste-article.xhtml" class="btn btn-primary" >All articles</a>
+					          </div>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
+					</section>
+			    
+					
+					
+					
+			    
+			     <ui:include src="/shared/footer.html"></ui:include>
+		     </main>
+		</body>
+	</f:view>
+</html>
+
